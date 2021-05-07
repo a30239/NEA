@@ -52,9 +52,9 @@ class SNR():
         return noise
 
     def snr(self):
-        return (1/2.1**(0.5))*self.signal()/self.noise()
+        return (1 / 2.1 ** (0.5)) *self.signal()/self.noise()
 
-
+    #
 
     def path_trans(self):
         # 地理纬度转化为弧度单位
@@ -81,7 +81,7 @@ class SNR():
 
     # 半径与视宁度的关系
     def R(self):
-        R = self.seeing_FWHM() / (2 * (2 * math.log(2)) ** 0.5)*3
+        R = 3*self.seeing_FWHM() / (2 * (2 * math.log(2)) ** 0.5)
         return R
 
     def n_p(self):
@@ -103,7 +103,7 @@ class SNR():
     #     print(seeing)
 
     # def seeing(self):
-    #     # 生成满足卡方分布的随机数 从中随机抽取一个作为seeing的值？
+    #     # 生成满足卡方分布的随机数 从中随机抽取一个作为seeing的值
     #     seeingDis = np.random.chisquare(1,100)
     #     seeing = np.random.choice(seeingDis,1)
     #     return seeing[0]

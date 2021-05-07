@@ -11,9 +11,9 @@ x2 = [_+0.4 for _ in range(5)]
 #总数
 z = [167533, 12654, 724, 54, 5]
 # xuyi
-z1 = [34, 15, 14, 2, 2]
+z1 = [152, 84, 47, 7, 2]
 # lenghu
-z2 =  [228, 135, 54, 7, 2]
+z2 =  [1010, 443, 141, 22, 2]
 
 y1 = [z1[i]/z[i] for i in range(len(z))]
 y2 = [z2[i]/z[i] for i in range(len(z))]
@@ -42,7 +42,7 @@ for x, y in enumerate(y2):
     plt.text(x+0.45, y+0.15/20,tmp, ha='center')
 
 plt.legend(loc='best')
-plt.savefig('./pic/completionbins.png')
+plt.savefig('./pic/completionbins1y_g.png')
 plt.show()
 
 # plt.xlabel('D(km)')
