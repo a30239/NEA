@@ -2,7 +2,7 @@
 # 需要进行计算的日期 单独列为一个程序
 
 import datetime
-from detected_rate import detect_result
+from detectStatistics import detect_result
 
 def days(startdate,enddate):
     datestart = datetime.datetime.strptime(startdate, '%Y/%m/%d')
@@ -38,20 +38,20 @@ for i in range(len(day)):
 
 print(detect_completion)
 
-# 绘制完备度分布图
-# 横坐标为日期 纵坐标为检测率（百分比
-date = [key for key,value in detect_completion.items()]
-rate = [value for key,value in detect_completion.items()]
-
-import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-
-plt.xlabel('date')
-plt.ylabel('completion')
-# 设置纵坐标为百分比
-# def to_percent(temp, position):
-#   return '%1.0f'%(10*temp) + '%'
-# plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
-
-plt.plot(date,rate)
-plt.show()
+# # 绘制完备度分布图
+# # 横坐标为日期 纵坐标为检测率（百分比
+# date = [key for key,value in detect_completion.items()]
+# rate = [value for key,value in detect_completion.items()]
+#
+# import matplotlib.pyplot as plt
+# from matplotlib.ticker import FuncFormatter
+#
+# plt.xlabel('date')
+# plt.ylabel('completion')
+# # 设置纵坐标为百分比
+# # def to_percent(temp, position):
+# #   return '%1.0f'%(10*temp) + '%'
+# # plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
+#
+# plt.plot(date,rate)
+# plt.show()
