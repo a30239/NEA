@@ -91,6 +91,9 @@ def D(detected):
 #对数据进行处理
 ndetected1 = process(detected1)
 ndetected2 = process(detected2)
+
+print(D(ndetected1)[1])
+
 print('总数量统计：',statistics(D(ndetected1)[0]))
 print('检测列表数量统计1：',statistics(D(ndetected1)[1]))
 print('检测列表数量统计2：',statistics(D(ndetected2)[1]))

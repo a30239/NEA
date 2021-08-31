@@ -40,6 +40,6 @@ plt.hist(magSNR,range=(15,25),bins=100,histtype='step',label='SNR')
 
 plt.hist(mag_o,range=(15,25),bins=100,histtype='step')
 plt.legend(loc='best')
-plt.xlim(15,25)
-plt.savefig('./magdete.png')
+plt.xlim(19,25)
+plt.savefig('./magdete1.png')
 plt.show()
