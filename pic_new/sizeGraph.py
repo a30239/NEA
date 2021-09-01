@@ -29,6 +29,7 @@ plt.rcParams['ytick.direction'] = 'in'
 #设置纵坐标为百分比
 def to_percent(temp,pos):
   return '%1.0f'%(100*temp) + '%'
+
 plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percent))
 
 
@@ -40,7 +41,7 @@ plt.bar(x2, y2,width=0.4,label='Lenghu')
 
 plt.xticks([_+0.2 for _ in x1],name)
 
-plt.xlabel('D / km')
+plt.xlabel('$D$/km')
 plt.ylabel('Detection rate')
 # 添加百分比
 for x, y in enumerate(y1):
@@ -52,16 +53,8 @@ for x, y in enumerate(y2):
     plt.text(x+0.45, y+0.15/20,tmp, ha='center')
 
 plt.legend(loc='best')
-plt.savefig('./5.png')
+# 四面都显示刻度
+plt.tick_params(top=True,bottom=True,left=True,right=True)
+#plt.savefig('./5.eps')
 plt.show()
 
-# plt.xlabel('D(km)')
-# plt.ylabel('Numbers')
-#
-# plt.bar(x1, z,width=0.8,color='orange',tick_label=name)
-# for x, y in enumerate(z):
-#     print(x,y)
-#
-#     plt.text(x, y+0.15/20,y, ha='center')
-# plt.savefig('./pic/nums.jpg')
-# plt.show()

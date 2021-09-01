@@ -2,7 +2,7 @@
 # 保存图片
 
 # 取原数据
-with open('E:/Python/asteroid/Soft03Unusual_new.txt','r') as f:
+with open('/Users/maoyumeng/PycharmProjects/NEA/limitmag/Soft03Unusual_new.txt','r') as f:
     H0 = []
     # 读取小行星轨道根数数据
     data = f.readlines()
@@ -25,7 +25,7 @@ def D2H(D):
         H.append(15.618-2.5*math.log10(pv)-5*math.log10(i))
     return H
 # 模拟数据
-with open('E:/Python/asteroid/Soft03Unusual_expansion_sorted.txt','r') as f:
+with open('/Users/maoyumeng/PycharmProjects/NEA/Soft03Unusual_expansion_sorted.txt','r') as f:
     H1 = []
     # 读取小行星轨道根数数据
     data = f.readlines()
@@ -66,28 +66,34 @@ plt.plot(H,N,linestyle='--')
 # N = [942*i**(-2.354) for i in D]
 
 
-plt.xlabel('H / mag')
-plt.ylabel('N')
+plt.xlabel('$H$/mag')
+plt.ylabel('$N$')
 plt.yscale('log')
 #plt.xscale('log')
 #plt.scatter(H0,N)
 #plt.gca().invert_xaxis()
 
+
+plt.quiver(27,0.5,1, 0, color='black', width=0.003) # 绘制箭头
+plt.quiver(15,0.5, -1, 0, color='black', width=0.003) # 绘制箭头
+plt.text(23,0.3,'0.01-30 km')
 plt.annotate(text='Size distribution model',xy=(22,1000000),xytext=(22,10000000),weight='medium',color='black',\
              arrowprops=dict(arrowstyle='-|>',connectionstyle='arc3',color='black'))
 plt.annotate(text='Distribution of simulation data',xy=(24,1000),xytext=(28,10),weight='medium',color='black',\
              arrowprops=dict(arrowstyle='-|>',connectionstyle='arc3',color='black'))
-plt.annotate(text='Distribution of known data',xy=(30,10000),xytext=(32,800000),weight='medium',color='black',\
+plt.annotate(text='Distribution of known data',xy=(30,15000),xytext=(32,800000),weight='medium',color='black',\
              arrowprops=dict(arrowstyle='-|>',connectionstyle='arc3',color='black'))
 #plt.xlim(14.67,27.75)
 plt.xlim(9.5,33)
 
-print(min(H1))
+# 四面都显示刻度
+plt.tick_params(top=True,bottom=True,left=True,right=True)
+
 #原始数据的分布
 plt.hist(H0, cumulative=True,histtype='step',bins=50,facecolor='red', edgecolor='red')
 #plt.hist(D_new, bins=50,facecolor='blue', edgecolor='black', alpha=0.3)
 plt.hist(H1,bins=30,cumulative=True,histtype='step')
 plt.gca().invert_xaxis()
 
-plt.savefig('./3.png')
+plt.savefig('./3.eps')
 plt.show()
